@@ -5,50 +5,58 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 // This is the main configuration object.
 // Here, you write different options and tell Webpack what to do.
 module.exports = {
-    // Path to your entry point. From this file, Webpack will begin its work.
-    entry: "./src/app.js",
+  // Path to your entry point. From this file, Webpack will begin its work.
+  entry: "./src/js/main.js",
 
-    // Webpack will bundle all Javascript source code into <filename> and output 
-    // to <path>. FYI, __dirname is the 
-    output: {
-        path: path.resolve(__dirname, "dist"),
-        filename: "bundle.js"
-    },
+  // Webpack will bundle all Javascript source code into <filename> and output
+  // to <path>. FYI, __dirname is the
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js"
+  },
 
-    plugins: [
-        // Automatically creates an HTML file to add your bundled JS file via
-        // the <script> tag. If a template is provided, then it will a <script>
-        // tag into the template instead. By default, the generated HTML file 
-        // will be exported to output.path (which is defined above).
-        new HtmlWebpackPlugin({
-            template: "./src/template.html",
-        }),
-    ],
+  plugins: [
+    // Automatically creates an HTML file to add your bundled JS file via
+    // the <script> tag. If a template is provided, then it will a <script>
+    // tag into the template instead. By default, the generated HTML file
+    // will be exported to output.path (which is defined above).
+    new HtmlWebpackPlugin({
+      template: "./src/template.html"
+    })
+  ],
 
-    // Deploys a server to automatically (by default) load your HTML file.
-    // Reduces the development process by not requiring you to manually
-    // load your HTML file into your browser.
-    devServer: {
-        contentBase: path.join(__dirname, "dist"),
-        port: 8080
-    },
+  // Deploys a server to automatically (by default) load your HTML file.
+  // Reduces the development process by not requiring you to manually
+  // load your HTML file into your browser.
+  devServer: {
+    contentBase: path.join(__dirname, "dist"),
+    port: 8080
+  },
 
-    module: {
-        rules: [
-            {
-                test: /\.(js|jsx)$/,
-                use: {
-                    loader: "babel-loader",
-                    options: {
-                        "presets": ["@babel/preset-env"]
-                    }
-                },
-                exclude: /node_modules/
-            }
-        ]
-    },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        use: {
+          // Need Babel to convert JSX to JavaScript
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"]
+          }
+        },
+        exclude: /node_modules/
+      },
 
-    resolve: {
-        extensions: [".js", ".jsx"]
-    }
+      {
+        test: /\.css$/,
+        // CSS-loader: resovles all URL's
+        // Style-loader: properly imports CSS modules
+        use: ["style-loader", "css-loader"]
+      }
+    ]
+  },
+
+  resolve: {
+    extensions: [".js", ".jsx"]
+  }
 };
