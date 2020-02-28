@@ -15,6 +15,7 @@ export default class Header extends React.Component {
     };
 
     let navLinkList = [];
+    // TODO: need to add "key" prop for list items
     for (let name in hash)
       navLinkList.push(
         <NavLink linkName={name} link={hash[name]} className="navlink" />
