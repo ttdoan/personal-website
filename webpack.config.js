@@ -11,7 +11,7 @@ module.exports = {
   // Webpack will bundle all Javascript source code into <filename> and output
   // to <path>. FYI, __dirname is the
   output: {
-    path: path.resolve(__dirname),
+    path: path.resolve(__dirname, "dist"),
     filename: "bundle.js"
   },
 
