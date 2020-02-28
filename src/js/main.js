@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Nav from "./components/Nav";
+import Header from "./components/Header";
+import Section from "./components/Section";
 import Footer from "./components/Footer";
 import "../css/style.css";
 
@@ -10,10 +11,11 @@ class Website extends React.Component {
   }
 
   render() {
-    // TODO: need to create a dropdown clickable menu...
     return (
       <>
-        <Nav />
+        <Header />
+        <Section id="home" />
+        <Section id="about" />
         <Footer />
       </>
     );
