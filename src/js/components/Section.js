@@ -15,6 +15,9 @@ export default class Section extends React.Component {
     return (
       <section id={this.props.id} style={tempStyle}>
         <div className="overlay"></div>
+        <div className="section-container">
+          <h1>{this.props.subheader}</h1>
+        </div>
         <p>This is a section.</p>
       </section>
     );
