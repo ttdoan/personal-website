@@ -28,9 +28,9 @@ body {
 .nav-container {
   display: flex;
   flex-flow: row nowrap;
+  background-color: var(--bg-color);
   width: 100%;
   align-items: center;
-  border: solid red;
   position: fixed;
   top: 0;
 }
@@ -41,36 +41,56 @@ body {
   text-transform: uppercase;
   color: var(--primary-color);
 }
-/* Menu button */
-.menu {
-  display: none;
-  flex-flow: row nowrap;
-  background-color: var(--bg-color);
-  color: var(--primary-color);
-}
-.menu-icon div {
-  width: 35px;
-  height: 5px;
-  background-color: var(--primary-color);
-  margin: 6px;
-  border-radius: 5px;
-}
-.menu span {
-  text-transform: uppercase;
-  font-size: 30px;
-  margin-top: 3px;
-}
 
 .navbar {
   /* Flexbox configurations */
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
-
-  border: solid yellow;
-  list-style: none;
   width: 100%;
   padding: 0;
+}
+
+.navbar-menu-button {
+  display: none;
+  flex-flow: row nowrap;
+  background-color: var(--primary-color);
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.menu-button-icon div {
+  width: 20px;
+  height: 3px;
+  background-color: var(--bg-color);
+  margin: 4px;
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 5px;
+  transition: 0.4s;
+}
+
+.menu-clicked .icon-bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 4px);
+  transform: rotate (-45deg) translate(-6px, 4px);
+}
+
+.menu-clicked .icon-bar2 {
+  opacity: 0;
+}
+
+.menu-clicked .icon-bar3 {
+  --translate-x: -5px;
+  --translate-y: -5px;
+  -webkit-transform: rotate(45deg)
+    translate(var(--translate-x), var(--translate-y));
+  transform: rotate(45deg) translate(var(--translate-x), var(--translate-y));
+}
+
+.navbar-menu-list {
+  display: inherit;
+  list-style: none;
 }
 
 .navlink {
@@ -112,11 +132,11 @@ section .overlay {
 
 /* Tablet */
 @media only screen and (max-width: 768px) {
-  .menu {
+  .navbar-menu-button {
     display: flex;
   }
 
-  .navbar {
+  .navbar-menu-list {
     display: none;
   }
 }

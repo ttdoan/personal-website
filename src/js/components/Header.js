@@ -1,5 +1,6 @@
 import React from "react";
 import NavLink from "./NavLink";
+import NavMenuButton from "./NavMenuButton";
 
 export default class Header extends React.Component {
   constructor(props) {
@@ -29,22 +30,10 @@ export default class Header extends React.Component {
           <a className="brand" href="index.html">
             Tony
           </a>
-          <button className="menu">
-            <div className="menu-icon">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <span>Menu</span>
-          </button>
 
-          <ul className="navbar">{navLinkList}</ul>
-          <div className="theme-switch-wrapper">
-            <label className="theme-switch" htmlFor="checkbox">
-              <input type="checkbox" id="checkbox" />
-              <div className="slider round"></div>
-            </label>
-            <em>Enable Dark Mode!</em>
+          <div className="navbar">
+            <NavMenuButton />
+            <ul className="navbar-menu-list">{navLinkList}</ul>
           </div>
         </nav>
       </header>
