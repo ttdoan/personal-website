@@ -51,6 +51,13 @@ body {
   padding: 0;
 }
 
+/* Contains the menu button and navlinks */
+.navbar-menu-list {
+  display: inherit;
+  list-style: none;
+  margin: 0;
+}
+
 .navbar-menu-button {
   display: none;
   flex-flow: row nowrap;
@@ -88,19 +95,13 @@ body {
   transform: rotate(45deg) translate(var(--translate-x), var(--translate-y));
 }
 
-.navbar-menu-list {
-  display: inherit;
-  list-style: none;
-}
-
-.navlink {
+.navbar-menu-list li {
   padding: 5px;
   float: none;
 }
 
 .nav-container a {
   text-decoration: none;
-  position: relative;
   color: var(--primary-color);
 }
 
@@ -127,7 +128,7 @@ body {
 }
 
 section .overlay {
-  height: 50px;
+  height: 20px;
 }
 
 /* Tablet */
