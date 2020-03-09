@@ -30,7 +30,7 @@ body {
   flex-flow: row nowrap;
   background-color: var(--bg-color);
   width: 100%;
-  align-items: center;
+  align-items: top;
   position: fixed;
   top: 0;
 }
@@ -53,22 +53,37 @@ body {
 
 /* Contains the menu button and navlinks */
 .navbar-menu-list {
-  display: inherit;
+  display: none;
   list-style: none;
   margin: 0;
 }
 
+.menu-list-toggle {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end;
+}
+
+.menu-list-toggle .navbar-menu-list {
+  display: flex;
+  flex-direction: inherit;
+}
+
 .navbar-menu-button {
-  display: none;
+  display: flex;
   flex-flow: row nowrap;
   background-color: var(--primary-color);
   cursor: pointer;
   border-radius: 5px;
   margin-right: 10px;
+  width: 35px;
+}
+
+.menu-button-icon {
+  width: 20px;
 }
 
 .menu-button-icon div {
-  width: 20px;
   height: 3px;
   background-color: var(--bg-color);
   margin: 4px;
@@ -78,16 +93,16 @@ body {
   transition: 0.4s;
 }
 
-.menu-clicked .icon-bar1 {
+.menu-btn-animate .icon-bar1 {
   -webkit-transform: rotate(-45deg) translate(-6px, 4px);
   transform: rotate (-45deg) translate(-6px, 4px);
 }
 
-.menu-clicked .icon-bar2 {
+.menu-btn-animate .icon-bar2 {
   opacity: 0;
 }
 
-.menu-clicked .icon-bar3 {
+.menu-btn-animate .icon-bar3 {
   --translate-x: -5px;
   --translate-y: -5px;
   -webkit-transform: rotate(45deg)
@@ -95,7 +110,13 @@ body {
   transform: rotate(45deg) translate(var(--translate-x), var(--translate-y));
 }
 
+.navbar-menu-list {
+  margin-right: 10px;
+}
+
 .navbar-menu-list li {
+  /* Needed for link animation */
+  position: relative;
   padding: 5px;
   float: none;
 }
@@ -132,13 +153,13 @@ section .overlay {
 }
 
 /* Tablet */
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
   .navbar-menu-button {
-    display: flex;
+    display: none;
   }
 
   .navbar-menu-list {
-    display: none;
+    display: flex;
   }
 }
 

@@ -18,12 +18,7 @@ export default class NavMenuButton extends React.Component {
 
   render() {
     return (
-      <button
-        className={
-          "navbar-menu-button" + (this.state.active ? " menu-clicked" : "")
-        }
-        onClick={this.clicked}
-      >
+      <button className={this.props.classes} onClick={this.props.handleClick}>
         <div className="menu-button-icon">
           <div className="icon-bar1"></div>
           <div className="icon-bar2"></div>

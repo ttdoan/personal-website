@@ -23,6 +23,7 @@ class Website extends React.Component {
 }
 
 ReactDOM.render(<Website />, document.body);
+
 const toggleSwitch = document.querySelector(
   '.theme-switch input[type="checkbox"]'
 );
