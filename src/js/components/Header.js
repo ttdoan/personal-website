@@ -1,4 +1,5 @@
 import React from "react";
+import Brand from "./Brand";
 import NavLink from "./NavLink";
 import NavMenuButton from "./NavMenuButton";
 
@@ -20,27 +21,21 @@ export default class Header extends React.Component {
   }
 
   render() {
-    let hash = {
-      Home: "#home",
-      About: "#about",
-      Resume: "#",
-      Projects: "#"
-    };
-
     let navLinkList = [];
     // TODO: need to add "key" prop for list items
-    for (let name in hash)
+    for (let name in this.props.sections)
       navLinkList.push(
-        <NavLink linkName={name} link={hash[name]} className="navlink" />
+        <NavLink
+          linkName={name}
+          link={this.props.sections[name]}
+          className="navlink"
+        />
       );
 
     return (
       <header>
         <nav className="nav-container">
-          <a className="brand" href="index.html">
-            Tony
-          </a>
-
+          <Brand />
           <div
             className={
               "navbar" + (this.state.toggleMenu ? " menu-list-toggle" : "")

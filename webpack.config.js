@@ -52,6 +52,15 @@ module.exports = {
         // CSS-loader: resovles all URL's
         // Style-loader: properly imports CSS modules
         use: ["style-loader", "css-loader"]
+      },
+
+      {
+        test: /\.(png|jpe?g|gif)$/,
+        use: [
+          {
+            loader: "file-loader"
+          }
+        ]
       }
     ]
   },

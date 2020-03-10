@@ -3,6 +3,7 @@
   --bg-color: black;
   --primary-color: white;
   --content-width: 100%;
+  --navlink-margin: 50px;
 }
 
 /* Universal box sizing with inheritance. */
@@ -23,7 +24,10 @@ body {
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
+  max-width: var(--content-width);
+  margin: auto;
   font-family: Arial, Helvetica, sans-serif;
+  color: var(--primary-color);
   background-color: var(--bg-color);
 }
 
@@ -40,6 +44,7 @@ header {
   align-items: top;
   position: fixed;
   top: 0;
+  padding-left: 7px;
 }
 
 .brand {
@@ -47,7 +52,7 @@ header {
   font-weight: 900;
   text-transform: uppercase;
   color: var(--primary-color);
-  margin-left: 7px;
+  text-decoration: none;
 }
 
 .navbar {
@@ -61,10 +66,14 @@ header {
 }
 
 /* Contains the menu button and navlinks */
-.navbar-menu-list {
-  display: none;
+ul {
   list-style: none;
   margin: 0;
+  padding: 0;
+}
+
+.navbar-menu-list {
+  display: none;
 }
 
 .menu-list-toggle {
@@ -123,16 +132,12 @@ header {
   margin-right: 10px;
 }
 
-.navbar-menu-list li {
+.navbar-menu-list a {
   /* Needed for link animation */
   position: relative;
-  padding: 5px;
-  float: none;
-}
-
-.nav-container a {
-  text-decoration: none;
   color: var(--primary-color);
+  text-decoration: none;
+  margin: 2px 0px 0px var(--navlink-margin);
 }
 
 .navlink a::before {
@@ -157,8 +162,37 @@ header {
   transform: scaleX(1);
 }
 
-section .overlay {
-  height: 20px;
+.overlay {
+  height: 50px;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background-color: gray;
+}
+
+#ft-hdr {
+  display: flex;
+  grid-column: 1 / 6;
+  justify-content: space-between;
+  align-items: center;
+}
+
+hr {
+  grid-column: 1 / 6;
+  width: 100%;
+}
+
+footer img {
+  width: 35px;
+  height: 35px;
+}
+
+.copyright {
+  grid-area: "cpyrght";
+  grid-column: 1 / 6;
+  text-align: center;
 }
 
 /* Tablet */
@@ -189,11 +223,8 @@ section .overlay {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-  body {
+  :root {
     --content-width: 1200px;
-    max-width: var(--content-width);
-    margin: auto;
-    border: solid red;
   }
 }
 

@@ -11,9 +11,17 @@ class Website extends React.Component {
   }
 
   render() {
+    let sections = {
+      Home: "#home",
+      About: "#about",
+      Resume: "#",
+      Projects: "#",
+      Contact: "#"
+    };
+
     return (
       <>
-        <Header />
+        <Header sections={sections} />
         <Section id="home" />
         <Section id="about" />
         <Footer />
