@@ -61,6 +61,11 @@ module.exports = {
             loader: "file-loader"
           }
         ]
+      },
+
+      {
+        test: /\.s[ac]ss$/,
+        use: ["style-loader", "css-loader", "sass-loader"]
       }
     ]
   },

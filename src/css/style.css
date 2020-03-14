@@ -39,7 +39,7 @@ header {
 .nav-container {
   display: inline-flex;
   flex-flow: row nowrap;
-  background-color: gray;
+  background-color: rgb(60, 64, 67);
   width: inherit;
   align-items: top;
   position: fixed;
@@ -164,35 +164,6 @@ ul {
 
 .overlay {
   height: 50px;
-}
-
-footer {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  background-color: gray;
-}
-
-#ft-hdr {
-  display: flex;
-  grid-column: 1 / 6;
-  justify-content: space-between;
-  align-items: center;
-}
-
-hr {
-  grid-column: 1 / 6;
-  width: 100%;
-}
-
-footer img {
-  width: 35px;
-  height: 35px;
-}
-
-.copyright {
-  grid-area: "cpyrght";
-  grid-column: 1 / 6;
-  text-align: center;
 }
 
 /* Tablet */

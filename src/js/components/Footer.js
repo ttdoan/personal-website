@@ -1,5 +1,4 @@
 import React from "react";
-import Brand from "./Brand";
 import LIbrand from "../../images/LIbrand.png";
 import GHbrand from "../../images/GHbrand.png";
 
@@ -14,13 +13,36 @@ export default class Footer extends React.Component {
         <div className="overlay"></div>
         <footer>
           <div id="ft-hdr">
-            <Brand />
             <a href="#">Return to Top</a>
           </div>
           <hr></hr>
-          <div>
+          <div className="ft-item">
+            <span>About</span>
+          </div>
+          <div className="ft-item-info">
+            <span>
+              I am a code developer with a wide range of experience, including
+              mobile development using cross-platorm libgdx, validating
+              pre-silicion design using UVM methodology, and web development.
+            </span>
+          </div>
+          <div className="ft-item">
+            <span>Contact</span>
+          </div>
+          <div className="ft-item-info">
             <ul>
-              <li></li>
+              <li>
+                <a href="mailto:tony.thinh.doan@gmail.com">
+                  tony.thinh.doan@gmail.com
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="ft-item">
+            <span>Connect</span>
+          </div>
+          <div className="ft-item-info">
+            <ul>
               <li>
                 <a
                   href="https://www.linkedin.com/in/tony-thinh-doan"
@@ -29,6 +51,8 @@ export default class Footer extends React.Component {
                 >
                   <img src={LIbrand} alt="LinkedIn Brand"></img>
                 </a>
+              </li>
+              <li>
                 <a
                   href="https://github.com/ttdoan"
                   rel="noopener noreferrer"
@@ -37,13 +61,8 @@ export default class Footer extends React.Component {
                   <img src={GHbrand} alt="Github Brand"></img>
                 </a>
               </li>
-              <li>
-                <span>Email: tony.thinh.doan@gmail.com</span>
-              </li>
             </ul>
           </div>
-          <div>this is second div</div>
-          <div> this is third div</div>
           <hr></hr>
           <p className="copyright">Copyright &copy;2020 All rights reserved</p>
         </footer>
