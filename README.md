@@ -1,53 +1,42 @@
 # Personal Website Project
 
-I will be using Docker + Jenkins to work on my web development projects. I am assuming that you already have Docker installed and have basic knowledge of Docker. Below are the instructions on how I set up my containers for development.
+I am creating a resume website to showcase my skills and experience as a programmer. You can view my website here:
 
-## Creating a Container for GIT-based Project
+[https://ttdoan.github.io/personal-website/dist](https://ttdoan.github.io/personal-website/dist)
 
-1\. Clone a Linux-based docker image. You clone either a full image of Linux, such as Ubuntu, or you can clone a lightweight version, such as Alpine or Debian. For this project, we will be using Alpine.
+My resume website is built using the following technologies:
 
-```
-docker pull alpine
-```
+- HTML
+- CSS
+- JavaScript
+- React
 
-2\. Run the pulled image to create a new running container.
+The following tools (to name a few) are used for the website development:
 
-```
-docker run -it --name my-website --mount type=bind,source="$(pwd)",target=/projects
-```
+- NPM - package manager
+- Webpack - bundler
+- Babel - JSX preprocessor
+- Sass - CSS preprocessor
+- ESlint - linter
 
-This command create a bind mount on your host computer. This is only necessary if you want to edit files in your container using programs like code editors such as VS code or VIM that are already installed on your host machine.
+To view the full list of dependencies, you can look at a [package.json](./package.json).
 
-3\. Install GIT on your container. Installing GIT is dependent on the OS you chose. Visit this page for more details.
+## Clone My Project
 
-[https://git-scm.com/download/linux
-](https://git-scm.com/download/linux)
-
-Since we are using Alpine, our command will be:
-
-```
-apk add git
-```
-
-4\. Clone your Github repo and that's it!
-
-## Creating a Container for Jenkins CI/CD
-
-1\. Go to Docker Hub and search for the latest Jenkins image. As of this writing, the most current Jenkins image is here:
-
-[https://hub.docker.com/r/jenkins/jenkins](https://hub.docker.com/r/jenkins/jenkins)
-
-The above page has a link for further documentation on how to use the Jenkins docker image. You can also find this link below:
-
-[https://github.com/jenkinsci/docker/blob/master/README.md](https://github.com/jenkinsci/docker/blob/master/README.md)
-
-Use the following command to clone the Jenkins image:
-```
-docker pull jenkins/jenkins:lts
-```
-
-2\. Create a running container from the Jenkins image using the following command:
+You can clone my project using the following git command:
 
 ```
-docker run -it --name jenkins -p 8080:8080 --mount type=volume,source=jenkins-data,target=/var/jenkins_home jenkins/jenkins:lts
+git clone https://github.com/ttdoan/personal-website.git
+```
+
+To download dependencies, please have NPM installed. You can install NPM as part of Node.js. Run the following command to install all dependencies (including for development):
+
+```
+npm install
+```
+
+If you only want to download required dependencies, run the following command:
+
+```
+npm install package
 ```
