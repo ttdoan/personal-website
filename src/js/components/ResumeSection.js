@@ -1,5 +1,6 @@
 import React from "react";
 import Section from "./Section";
+import ResumeDoc from "../../../assets/Resume.doc";
 import ResumeItem from "./ResumeItem";
 
 let resumeItems = [
@@ -65,9 +66,20 @@ export default class ResumeSection extends React.Component {
       );
     }
 
+    let content = (
+      <>
+        {resumeInstances}
+        <div className="download-wrapper">
+          <a href={ResumeDoc} alt="Resume download" className="download">
+            Download Resume
+          </a>
+        </div>
+      </>
+    );
+
     return (
       <>
-        <Section id={this.props.id} title="Resume" content={resumeInstances} />
+        <Section id={this.props.id} title="Resume" content={content} />
       </>
     );
   }

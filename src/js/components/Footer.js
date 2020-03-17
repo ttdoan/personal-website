@@ -1,6 +1,6 @@
 import React from "react";
-import LIbrand from "../../images/LIbrand.png";
-import GHbrand from "../../images/GHbrand.png";
+import LIbrand from "../../../assets/images/LIbrand.png";
+import GHbrand from "../../../assets/images/GHbrand.png";
 
 export default class Footer extends React.Component {
   constructor(props) {

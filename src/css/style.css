@@ -183,6 +183,24 @@ ul {
   margin: 0;
 }
 
+.section-container .download-wrapper {
+  grid-column: span 1;
+  justify-self: center;
+}
+
+.section-container .download {
+  display: inline-block;
+  background-color: gold;
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 50px;
+  vertical-align: middle;
+  line-height: 70px;
+  width: 200px;
+}
+
 .section-container .resume-item {
   grid-column: span 1;
   background-color: rgb(26, 26, 26);
@@ -226,6 +244,10 @@ ul {
   }
 
   .section-container h1 {
+    grid-column: span 2;
+  }
+
+  .section-container .download-wrapper {
     grid-column: span 2;
   }
 }
