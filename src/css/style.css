@@ -3,11 +3,14 @@
   --bg-color: black;
   --primary-color: white;
   --content-width: 100%;
+  --content-bg-color: rgb(60, 64, 67);
   --navlink-margin: 50px;
+  --resume-item-gap: 50px;
 }
 
 /* Universal box sizing with inheritance. */
 html {
+  font-family: Calibri;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -26,7 +29,7 @@ body {
   width: 100%;
   max-width: var(--content-width);
   margin: auto;
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
   color: var(--primary-color);
   background-color: var(--bg-color);
 }
@@ -39,7 +42,7 @@ header {
 .nav-container {
   display: inline-flex;
   flex-flow: row nowrap;
-  background-color: rgb(60, 64, 67);
+  background-color: var(--content-bg-color);
   width: inherit;
   align-items: top;
   position: fixed;
@@ -67,13 +70,13 @@ header {
 
 /* Contains the menu button and navlinks */
 ul {
-  list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .navbar-menu-list {
   display: none;
+  list-style: none;
 }
 
 .menu-list-toggle {
@@ -166,6 +169,47 @@ ul {
   height: 50px;
 }
 
+.section-container {
+  display: grid;
+  width: 100%;
+  color: var(--primary-color);
+  grid-template-columns: 1fr;
+  row-gap: var(--resume-item-gap);
+}
+
+.section-container h1 {
+  font-size: 50px;
+  text-align: center;
+  margin: 0;
+}
+
+.section-container .resume-item {
+  grid-column: span 1;
+  background-color: rgb(26, 26, 26);
+  border-radius: 10px;
+  padding: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.resume-item > .date {
+  font-size: 25px;
+  color: gold;
+  font-weight: bold;
+}
+
+.resume-item > .company-position {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 50%);
+}
+
+.resume-item > .desc {
+  padding-left: 15px;
+}
+
 /* Tablet */
 @media only screen and (min-width: 768px) {
   .navbar-menu-button {
@@ -175,9 +219,15 @@ ul {
   .navbar-menu-list {
     display: flex;
   }
-}
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+
+  .section-container {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+  }
+
+  .section-container h1 {
+    grid-column: span 2;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */

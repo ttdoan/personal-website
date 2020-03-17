@@ -1,4 +1,4 @@
-# Personal Website Project
+# Resume Website Project
 
 I am creating a resume website to showcase my skills and experience as a programmer. You can view my website here:
 
@@ -7,7 +7,7 @@ I am creating a resume website to showcase my skills and experience as a program
 My resume website is built using the following technologies:
 
 - HTML
-- CSS
+- CSS / Flexbox / Grid
 - JavaScript
 - React
 

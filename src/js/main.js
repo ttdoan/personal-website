@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Header from "./components/Header";
 import Section from "./components/Section";
+import ResumeSection from "./components/ResumeSection";
 import Footer from "./components/Footer";
 import "../css/style.css";
 import "../scss/style.scss";
@@ -15,7 +16,7 @@ class Website extends React.Component {
     let sections = {
       Home: "#home",
       About: "#about",
-      Resume: "#",
+      Resume: "#resume",
       Projects: "#",
       Contact: "#"
     };
@@ -23,8 +24,9 @@ class Website extends React.Component {
     return (
       <>
         <Header sections={sections} />
-        <Section id="home" />
-        <Section id="about" />
+        {/*<Section id="home" />
+        <Section id="about" /> */}
+        <ResumeSection id="resume" />
         <Footer />
       </>
     );
