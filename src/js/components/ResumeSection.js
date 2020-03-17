@@ -9,7 +9,17 @@ let resumeItems = [
     position: "Personal Website - Creator",
     desc: [
       "Created website using the following technologies: HTML, CSS / Flexbox / Grid, JavaScript, and React",
-      "Used the following toolchain for development/deployment: NPM, Webpack, Babel, Sass, ESlint, Prettier"
+      "Used the following tools for development/deployment: NPM, Webpack, Babel, Sass, ESlint, Prettier, Git / Github",
+      <span>
+        Link to Github respository:{" "}
+        <a
+          href="https://github.com/ttdoan/personal-website"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          https://github.com/ttdoan/personal-website
+        </a>
+      </span>
     ]
   },
 

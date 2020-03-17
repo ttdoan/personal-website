@@ -5,7 +5,6 @@
   --content-width: 100%;
   --content-bg-color: rgb(60, 64, 67);
   --navlink-margin: 50px;
-  --resume-item-gap: 50px;
 }
 
 /* Universal box sizing with inheritance. */
@@ -174,13 +173,17 @@ ul {
   width: 100%;
   color: var(--primary-color);
   grid-template-columns: 1fr;
-  row-gap: var(--resume-item-gap);
+  row-gap: 50px;
 }
 
 .section-container h1 {
   font-size: 50px;
   text-align: center;
   margin: 0;
+}
+
+.section-container a {
+  color: rgb(51, 145, 255);
 }
 
 .section-container .download-wrapper {
