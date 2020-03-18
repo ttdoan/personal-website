@@ -171,21 +171,40 @@ ul {
 .section-container h1 {
   font-size: 50px;
   text-align: center;
-  border: solid white;
 }
 
 .about-container {
   display: grid;
-  border: solid white;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.about-container img {
+  display: none;
+  grid-column: span 2;
+  width: 50%;
+  height: inherit;
+  width: 100%;
 }
 
 .about-container .about-info {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column: span 4;
+  margin-left: 10px;
 }
 
-.about-info ul {
-  list-style: none;
-  margin-left: 10px;
+.about-info p {
+  margin: 0 0 5px 0;
+}
+
+.about-info .first-col {
+  grid-column: span 1;
+  font-size: 20px;
+}
+
+.about-info .second-col {
+  grid-column: span 2;
+  color: hsl(0, 0%, 50%);
 }
 
 .resume-container {
@@ -250,13 +269,22 @@ ul {
 }
 
 .contact-container .message {
-  border: solid red;
   margin: 0;
   justify-self: center;
   color: hsl(0, 0%, 50%);
 }
 
-/* Tablet */
+.contact-container .form {
+  border: solid white;
+  justify-self: center;
+  background-color: gold;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   .navbar-menu-button {
     display: none;
@@ -280,16 +308,15 @@ ul {
   }
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-}
-
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+  .about-container img {
+    display: grid;
+    grid-column: span 2;
+  }
+  .about-container .about-info {
+    grid-column: span 2;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */

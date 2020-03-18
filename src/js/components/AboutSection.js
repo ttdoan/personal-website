@@ -1,4 +1,5 @@
 import React from "react";
+import profile from "../../../assets/images/profile.jpg";
 import Section from "./Section";
 
 export default class AboutSection extends React.Component {
@@ -22,27 +23,18 @@ export default class AboutSection extends React.Component {
     let content = (
       <>
         <div className="about-container">
+          <img src={profile} alt="Profile"></img>
           <div className="about-info">
-            <ul>
-              {infoHash.map(obj => {
-                return (
-                  <li>
-                    <p>
-                      <b>{obj.key + ":"}</b>
-                    </p>
-                  </li>
-                );
-              })}
-            </ul>
-            <ul>
-              {infoHash.map(obj => {
-                return (
-                  <li>
-                    <p>{obj.value}</p>
-                  </li>
-                );
-              })}
-            </ul>
+            {infoHash.map(obj => {
+              return (
+                <>
+                  <p className="first-col">
+                    <b>{obj.key + ":"}</b>
+                  </p>
+                  <p className="second-col">{obj.value}</p>
+                </>
+              );
+            })}
           </div>
         </div>
       </>

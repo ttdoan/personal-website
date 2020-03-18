@@ -1,5 +1,6 @@
 import React from "react";
 import Section from "./Section";
+import ContactForm from "./ContactForm";
 
 export default class ContactSection extends React.Component {
   constructor(props) {
@@ -14,13 +15,7 @@ export default class ContactSection extends React.Component {
             I would love to hear from you! Send me a message and I will respond
             as soon as possible!
           </p>
-          <script
-            type="text/javascript"
-            defer
-            src="//www.123formbuilder.com/embed/5345151.js"
-            data-role="form"
-            data-default-width="650px"
-          ></script>
+          <ContactForm />
         </div>
       </>
     );
