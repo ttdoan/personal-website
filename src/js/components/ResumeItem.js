@@ -14,7 +14,11 @@ export default class ResumeItem extends React.Component {
           <p className="company-position">{this.props.position}</p>
           <ul className="desc">
             {this.props.desc.map((desc, idx) => {
-              return <li key={this.props.instanceId + "-" + idx}>{desc}</li>;
+              return (
+                <li key={"ResumeItem" + this.props.instanceId + "-" + idx}>
+                  {desc}
+                </li>
+              );
             })}
           </ul>
         </div>

@@ -168,7 +168,27 @@ ul {
   height: 50px;
 }
 
-.section-container {
+.section-container h1 {
+  font-size: 50px;
+  text-align: center;
+  border: solid white;
+}
+
+.about-container {
+  display: grid;
+  border: solid white;
+}
+
+.about-container .about-info {
+  display: flex;
+}
+
+.about-info ul {
+  list-style: none;
+  margin-left: 10px;
+}
+
+.resume-container {
   display: grid;
   width: 100%;
   color: var(--primary-color);
@@ -176,22 +196,16 @@ ul {
   row-gap: 50px;
 }
 
-.section-container h1 {
-  font-size: 50px;
-  text-align: center;
-  margin: 0;
-}
-
-.section-container a {
+.resume-container a {
   color: rgb(51, 145, 255);
 }
 
-.section-container .download-wrapper {
+.resume-container .download-wrapper {
   grid-column: span 1;
   justify-self: center;
 }
 
-.section-container .download {
+.resume-container .download {
   display: inline-block;
   background-color: gold;
   color: black;
@@ -204,7 +218,7 @@ ul {
   width: 200px;
 }
 
-.section-container .resume-item {
+.resume-container .resume-item {
   grid-column: span 1;
   background-color: rgb(26, 26, 26);
   border-radius: 10px;
@@ -231,6 +245,17 @@ ul {
   padding-left: 15px;
 }
 
+.contact-container {
+  display: grid;
+}
+
+.contact-container .message {
+  border: solid red;
+  margin: 0;
+  justify-self: center;
+  color: hsl(0, 0%, 50%);
+}
+
 /* Tablet */
 @media only screen and (min-width: 768px) {
   .navbar-menu-button {
@@ -241,16 +266,16 @@ ul {
     display: flex;
   }
 
-  .section-container {
+  .resume-container {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 30px;
   }
 
-  .section-container h1 {
+  .resume-container h1 {
     grid-column: span 2;
   }
 
-  .section-container .download-wrapper {
+  .resume-container .download-wrapper {
     grid-column: span 2;
   }
 }

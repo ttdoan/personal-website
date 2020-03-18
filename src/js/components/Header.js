@@ -23,12 +23,11 @@ export default class Header extends React.Component {
   render() {
     let navLinkList = [];
     // TODO: need to add "key" prop for list items
-    for (let name in this.props.sections)
+    for (let i = 0; i < this.props.sections.length; i++)
       navLinkList.push(
         <NavLink
-          linkName={name}
-          link={this.props.sections[name]}
-          className="navlink"
+          linkName={this.props.sections[i].name}
+          link={this.props.sections[i].id}
         />
       );
 

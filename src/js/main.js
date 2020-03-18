@@ -2,7 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Header from "./components/Header";
 import Section from "./components/Section";
+import AboutSection from "./components/AboutSection";
 import ResumeSection from "./components/ResumeSection";
+import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import "../css/style.css";
 import "../scss/style.scss";
@@ -13,20 +15,44 @@ class Website extends React.Component {
   }
 
   render() {
-    let sections = {
-      Home: "#home",
-      About: "#about",
-      Resume: "#resume",
-      Projects: "#",
-      Contact: "#"
-    };
+    let sections = [
+      {
+        name: "Home",
+        id: "home",
+        section: <Section id={this.id} />
+      },
+
+      {
+        name: "About",
+        id: "about",
+        section: <AboutSection id={this.id} />
+      },
+
+      {
+        name: "Resume",
+        id: "resume",
+        section: <ResumeSection id={this.id} />
+      },
+
+      {
+        name: "Projects",
+        id: "projects",
+        section: <Section id={this.id} />
+      },
+
+      {
+        name: "Contact",
+        id: "contact",
+        section: <ContactSection id={this.id} />
+      }
+    ];
 
     return (
       <>
         <Header sections={sections} />
-        {/*<Section id="home" />
-        <Section id="about" /> */}
-        <ResumeSection id="resume" />
+        {sections.map(obj => {
+          return obj.section;
+        })}
         <Footer />
       </>
     );

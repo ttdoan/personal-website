@@ -11,7 +11,7 @@ export default class Section extends React.Component {
       <section id={this.props.id}>
         <div className="overlay"></div>
         <div className="section-container">
-          <h1>{this.props.title}</h1>
+          {this.props.title == "" ? "" : <h1>{this.props.title}</h1>}
           {this.props.content}
         </div>
       </section>
@@ -21,6 +21,5 @@ export default class Section extends React.Component {
 
 Section.propTypes = {
   id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
   content: PropTypes.isRequired
 };

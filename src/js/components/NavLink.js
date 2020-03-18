@@ -9,7 +9,7 @@ export default class NavLink extends React.Component {
   render() {
     return (
       <li className="navlink">
-        <a href={this.props.link}>{this.props.linkName}</a>
+        <a href={"#" + this.props.link}>{this.props.linkName}</a>
       </li>
     );
   }

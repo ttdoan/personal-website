@@ -78,11 +78,13 @@ export default class ResumeSection extends React.Component {
 
     let content = (
       <>
-        {resumeInstances}
-        <div className="download-wrapper">
-          <a href={ResumeDoc} alt="Resume download" className="download">
-            Download Resume
-          </a>
+        <div className="resume-container">
+          {resumeInstances}
+          <div className="download-wrapper">
+            <a href={ResumeDoc} alt="Resume download" className="download">
+              Download Resume
+            </a>
+          </div>
         </div>
       </>
     );
