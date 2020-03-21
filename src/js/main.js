@@ -24,25 +24,25 @@ class Website extends React.Component {
       {
         name: "Home",
         id: "home",
-        section: <HomeSection id={this.id} />
+        section: <HomeSection id="home" />
       },
 
       {
         name: "About",
         id: "about",
-        section: <AboutSection id={this.id} />
+        section: <AboutSection id="about" />
       },
 
       {
         name: "Skills",
         id: "skills",
-        section: <Section id={this.id} />
+        section: <Section id="skills" />
       },
 
       {
         name: "Resume",
         id: "resume",
-        section: <ResumeSection id={this.id} />
+        section: <ResumeSection id="resume" />
       },
 
       // TODO: need to create project section..
@@ -57,7 +57,7 @@ class Website extends React.Component {
       {
         name: "Contact",
         id: "contact",
-        section: <ContactSection id={this.id} />
+        section: <ContactSection id="contact" />
       }
     ];
 
