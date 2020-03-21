@@ -8,10 +8,10 @@ let resumeItems = [
     date: "2020 - Present",
     position: "Personal Website - Creator",
     desc: [
-      "Created website using the following technologies: HTML, CSS / Flexbox / Grid, JavaScript, and React",
+      "Created website using the following technologies: HTML, CSS / Flexbox / Grid, JavaScript, React, and Owl Carousel",
       "Used the following tools for development/deployment: NPM, Webpack, Babel, Sass, ESlint, Prettier, Git / Github",
-      <span>
-        Link to Github respository:{" "}
+      <span key="resume-item-github-personal-website">
+        Link to Github respository:
         <a
           href="https://github.com/ttdoan/personal-website"
           target="_blank"

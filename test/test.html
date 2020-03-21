@@ -5,28 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      ul {
-        display: flex;
-        flex-flow: row nowrap;
-        list-style: none;
-        border: solid red;
+      div {
+        background-color: red;
+        width: 100px;
+        height: 100px;
+        transition: transform 2s;
       }
 
-      li {
-        border: solid green;
+      div:hover {
+        transform: matrix;
       }
     </style>
   </head>
   <body>
-    <header>
-      <div>
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Resume</li>
-          <li>Projects</li>
-        </ul>
-      </div>
-    </header>
+    <div id="one"></div>
+    <script>
+      console.log("this should print");
+      document
+        .getElementsByTagName("div")[0]
+        .addEventListener("click", event => {
+          event.target.animate([{ width: "100px" }, { width: "300px" }], {
+            duration: 1000
+          });
+        });
+      // document.getElementsByTagName("div")[0].style.backgroundColor = "yellow";
+    </script>
   </body>
 </html>

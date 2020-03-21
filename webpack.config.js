@@ -1,6 +1,7 @@
 // Webpack uses this to work with directories
 const path = require("path");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 
 // This is the main configuration object.
 // Here, you write different options and tell Webpack what to do.
@@ -22,6 +23,12 @@ module.exports = {
     // will be exported to output.path (which is defined above).
     new HtmlWebpackPlugin({
       template: "./src/template.html"
+    }),
+
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
     })
   ],
 

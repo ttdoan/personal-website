@@ -2,12 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Header from "./components/Header";
 import Section from "./components/Section";
+import HomeSection from "./components/HomeSection";
 import AboutSection from "./components/AboutSection";
 import ResumeSection from "./components/ResumeSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import "../css/style.css";
 import "../scss/style.scss";
+import "owl.carousel/dist/assets/owl.carousel.min.css";
+// import "owl.carousel/dist/assets/owl.theme.default.min.css";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel";
 
 class Website extends React.Component {
   constructor(props) {
@@ -19,7 +24,7 @@ class Website extends React.Component {
       {
         name: "Home",
         id: "home",
-        section: <Section id={this.id} />
+        section: <HomeSection id={this.id} />
       },
 
       {
@@ -29,16 +34,25 @@ class Website extends React.Component {
       },
 
       {
+        name: "Skills",
+        id: "skills",
+        section: <Section id={this.id} />
+      },
+
+      {
         name: "Resume",
         id: "resume",
         section: <ResumeSection id={this.id} />
       },
 
+      // TODO: need to create project section..
+      /*
       {
         name: "Projects",
         id: "projects",
         section: <Section id={this.id} />
       },
+      */
 
       {
         name: "Contact",
@@ -61,15 +75,10 @@ class Website extends React.Component {
 
 ReactDOM.render(<Website />, document.body);
 
-const toggleSwitch = document.querySelector(
-  '.theme-switch input[type="checkbox"]'
-);
-
-function switchTheme(e) {
-  if (e.target.checked) {
-    document.documentElement.setAttribute("data-theme", "dark");
-  } else {
-    document.documentElement.setAttribute("data-theme", "light");
-  }
-}
-toggleSwitch.addEventListener("change", switchTheme, false);
+$(document).ready(function() {
+  $(".owl-carousel").owlCarousel({
+    items: 1,
+    loop: true,
+    autoplay: true
+  });
+});

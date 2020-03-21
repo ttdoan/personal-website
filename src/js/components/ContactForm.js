@@ -18,12 +18,11 @@ export default class ContactForm extends React.Component {
         method="POST"
         className="form"
       >
-        <label htmlFor="contact-form-name">Name:</label>
+        <label htmlFor="contact-form-name">Name</label>
         <input type="text" name="name" id="contact-form-name"></input>
-        <br />
-        <label htmlFor="contact-form-email">Email:</label>
+        <label htmlFor="contact-form-email">Email</label>
         <input type="email" name="email" id="contact-form-email" />
-        <label htmlFor="contact-form-message">Message:</label>
+        <label htmlFor="contact-form-message">Message</label>
         <textarea name="message" id="contact-form-message" />
         {status === "SUCCESS" ? <p>Thanks!</p> : <button>Submit</button>}
         {status === "ERROR" && <p>Ooops! There was an error.</p>}
@@ -33,6 +32,7 @@ export default class ContactForm extends React.Component {
 
   submitForm(ev) {
     ev.preventDefault();
+    /*
     const form = ev.target;
     const data = new FormData(form);
     const xhr = new XMLHttpRequest();
@@ -48,5 +48,6 @@ export default class ContactForm extends React.Component {
       }
     };
     xhr.send(data);
+    */
   }
 }

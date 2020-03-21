@@ -40,3 +40,17 @@ If you only want to download required dependencies, run the following command:
 ```
 npm install package
 ```
+
+## Breakdown of Directories
+
+Once you have cloned my repo, you may find some directories that are unfamiliar to you. Here is a brief description of the repo's content:
+
+- Directories
+  - assets - Contains static content like images, fonts, etc.
+  - dist - Distributable folder. Files contained in this folder is for production.
+  - lib - External dependencies/libraries.
+  - node_modules - Packages installed by Npm.
+  - src - Project development source files.
+  - test - Files used run and test code.
+- webpack.config.js - Configuration file for webpack.
+- package.json - Libraries and dependencies from Npm.
