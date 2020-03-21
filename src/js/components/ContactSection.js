@@ -12,8 +12,8 @@ export default class ContactSection extends React.Component {
       <>
         <div className="contact-container">
           <p className="message">
-            I would love to hear from you! Send me a message and I will respond
-            as soon as possible!
+            Thank you for visiting my profile. I would love to hear from you!
+            Send me a message and I will respond as soon as possible!
           </p>
           <ContactForm />
         </div>
