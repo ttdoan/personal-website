@@ -4,36 +4,129 @@ export default class ContactForm extends React.Component {
   constructor(props) {
     super(props);
     this.submitForm = this.submitForm.bind(this);
-    this.state = {
-      status: ""
+    this.state = this.setDefault();
+  }
+
+  setDefault() {
+    return {
+      nameValid: true,
+      email: {
+        empty: false,
+        valid: true
+      },
+      msgValid: true,
+      submit: ""
     };
   }
 
   render() {
-    const { status } = this.state;
     return (
       <form
         onSubmit={this.submitForm}
         action="https://formspree.io/mlelnaaz"
         method="POST"
         className="form"
+        noValidate
       >
-        <label htmlFor="contact-form-name">Name</label>
-        <input type="text" name="name" id="contact-form-name"></input>
-        <label htmlFor="contact-form-email">Email</label>
-        <input type="email" name="email" id="contact-form-email" />
-        <label htmlFor="contact-form-message">Message</label>
-        <textarea name="message" id="contact-form-message" />
-        {status === "SUCCESS" ? <p>Thanks!</p> : <button>Submit</button>}
-        {status === "ERROR" && <p>Ooops! There was an error.</p>}
+        <input
+          type="text"
+          name="name"
+          id="contact-form-name"
+          aria-label="Name"
+          placeholder="Enter Name"
+        />
+        {!this.state.nameValid && (
+          <p className="required-field">This field is required.</p>
+        )}
+        <input
+          type="email"
+          name="email"
+          id="contact-form-email"
+          aria-label="Email"
+          placeholder="Enter Email"
+        />
+        {this.state.email.empty && (
+          <p className="required-field">This field is required.</p>
+        )}
+        {!this.state.email.valid && (
+          <p className="required-field">Invalid email address.</p>
+        )}
+        <textarea
+          name="message"
+          id="contact-form-message"
+          aria-label="Messsage"
+          placeholder="Enter Message"
+        />
+        {!this.state.msgValid && (
+          <p className="required-field">This field is required.</p>
+        )}
+        {this.state.submit === "SUCCESS" ? (
+          <p>Thanks!</p>
+        ) : (
+          <button>Submit</button>
+        )}
+        {this.state.submit === "ERROR" && <p>Ooops! There was an error.</p>}
       </form>
     );
   }
 
   submitForm(ev) {
     ev.preventDefault();
-    /*
+
     const form = ev.target;
+    const nameField = form.querySelector("#contact-form-name");
+    const emailField = form.querySelector("#contact-form-email");
+    const msgField = form.querySelector("#contact-form-message");
+
+    let keyframes = [
+      { transform: "translateY(0)" },
+      { transform: "translateY(0)" },
+      { transform: "translateY(-30px)" },
+      { transform: "translateY(0)" },
+      { transform: "translateY(-15px)" },
+      { transform: "translateY(0)" },
+      { transform: "translateY(-7px)" },
+      { transform: "translateY(0)" },
+      { transform: "translateY(0)" }
+    ];
+    let duration = 1000;
+    let valid = true;
+    let status = this.setDefault();
+
+    if (
+      nameField.value.length == 0 ||
+      emailField.value.length == 0 ||
+      msgField.value.length == 0 ||
+      !msgField.valid
+    ) {
+      valid = false;
+      if (nameField.value.length == 0) {
+        nameField.animate(keyframes, duration);
+        nameField.style.border = "solid red 1px";
+        status.nameValid = false;
+      } else status.nameValid = true;
+
+      let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if (emailField.value.length == 0) {
+        emailField.animate(keyframes, duration);
+        emailField.style.border = "solid red 1px";
+        status.email.empty = true;
+      } else if (!re.test(String(emailField.value).toLowerCase())) {
+        emailField.animate(keyframes, duration);
+        emailField.style.border = "solid red 1px";
+        status.email.valid = false;
+      }
+
+      if (msgField.value.length == 0) {
+        msgField.animate(keyframes, duration);
+        msgField.style.border = "solid red 1px";
+        status.msgValid = false;
+      }
+    }
+
+    this.setState(status);
+    if (!valid) return;
+
     const data = new FormData(form);
     const xhr = new XMLHttpRequest();
     xhr.open(form.method, form.action);
@@ -48,6 +141,5 @@ export default class ContactForm extends React.Component {
       }
     };
     xhr.send(data);
-    */
   }
 }

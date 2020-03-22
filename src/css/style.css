@@ -300,25 +300,21 @@ ul {
 
 .contact-container form {
   display: grid;
-  width: 50%;
-  grid-template-columns: 5em repeat(2, 1fr);
+  width: 80%;
   row-gap: 8px;
   justify-self: center;
 }
 
-.contact-container form > label {
-  text-align: right;
-  margin-right: 1ex;
-}
-
 .contact-container form > input {
-  grid-column: span 2;
+  grid-column: span 3;
+  font-family: Calibri;
 }
 
 .contact-container form > textarea {
-  grid-column: span 2;
+  grid-column: span 3;
   resize: none;
   height: 100px;
+  font-family: Calibri;
 }
 
 input#contact-form-message {
@@ -355,6 +351,17 @@ input#contact-form-message {
 
   .resume-container .download-wrapper {
     grid-column: span 2;
+  }
+  .contact-container form {
+    width: 70%;
+  }
+
+  .contact-container .required-field {
+    grid-column: span 3;
+    color: red;
+    justify-self: center;
+    margin: 0;
+    font-size: smaller;
   }
 }
 
