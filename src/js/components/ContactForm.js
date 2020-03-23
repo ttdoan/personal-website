@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default class ContactForm extends React.Component {
   constructor(props) {
     super(props);
     this.submitForm = this.submitForm.bind(this);
+    this.onFocusHandler = this.onFocusHandler.bind(this);
+    this.blurHandler = this.blurHandler.bind(this);
     this.state = this.setDefault();
+  }
+
+  onFocusHandler(ev) {
+    const prevBorder = ev.target.style.border;
+
+    ev.target.style.border = "solid skyblue 1.5px";
+    this.setState(state => {
+      state.prevBorder = prevBorder;
+      return state;
+    });
+  }
+
+  blurHandler(ev) {
+    ev.target.style.border = this.state.prevBorder;
   }
 
   setDefault() {
@@ -15,6 +31,7 @@ export default class ContactForm extends React.Component {
         valid: true
       },
       msgValid: true,
+      prevBorder: null,
       submit: ""
     };
   }
@@ -34,6 +51,8 @@ export default class ContactForm extends React.Component {
           id="contact-form-name"
           aria-label="Name"
           placeholder="Enter Name"
+          onFocus={this.onFocusHandler}
+          onBlur={this.blurHandler}
         />
         {!this.state.nameValid && (
           <p className="required-field">This field is required.</p>
@@ -44,6 +63,8 @@ export default class ContactForm extends React.Component {
           id="contact-form-email"
           aria-label="Email"
           placeholder="Enter Email"
+          onFocus={this.onFocusHandler}
+          onBlur={this.blurHandler}
         />
         {this.state.email.empty && (
           <p className="required-field">This field is required.</p>
@@ -56,6 +77,8 @@ export default class ContactForm extends React.Component {
           id="contact-form-message"
           aria-label="Messsage"
           placeholder="Enter Message"
+          onFocus={this.onFocusHandler}
+          onBlur={this.blurHandler}
         />
         {!this.state.msgValid && (
           <p className="required-field">This field is required.</p>
@@ -104,7 +127,7 @@ export default class ContactForm extends React.Component {
         nameField.animate(keyframes, duration);
         nameField.style.border = "solid red 1px";
         status.nameValid = false;
-      } else status.nameValid = true;
+      } else nameField.style.border = null;
 
       let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       if (emailField.value.length == 0) {
@@ -115,13 +138,13 @@ export default class ContactForm extends React.Component {
         emailField.animate(keyframes, duration);
         emailField.style.border = "solid red 1px";
         status.email.valid = false;
-      }
+      } else emailField.style.border = null;
 
       if (msgField.value.length == 0) {
         msgField.animate(keyframes, duration);
         msgField.style.border = "solid red 1px";
         status.msgValid = false;
-      }
+      } else msgField.style.border = null;
     }
 
     this.setState(status);
