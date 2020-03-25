@@ -1,0 +1,85 @@
+@import "../css/style.css";
+
+$max-cols: 6;
+$ft-item-cols: 1;
+$ft-item-padding: 5px;
+$space-between: 20px;
+
+@mixin ft-col($len) {
+  grid-column: span $len;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: repeat($max-cols, 1fr);
+  background-color: var(--content-bg-color);
+}
+
+footer a {
+  color: rgb(51, 145, 255);
+}
+
+.ft-item {
+  display: flex;
+  @include ft-col($ft-item-cols);
+  text-transform: uppercase;
+  justify-content: space-between;
+  padding-left: $ft-item-padding;
+}
+
+.ft-item::after {
+  content: "|";
+  padding-left: $space-between;
+  padding-right: $space-between;
+}
+
+.ft-item-info {
+  @include ft-col($max-cols - $ft-item-cols);
+  padding-right: $ft-item-padding;
+}
+
+.ft-item-info ul {
+  display: flex;
+  list-style: none;
+  align-items: flex-start;
+}
+
+.ft-item-info li {
+  padding-right: 10px;
+}
+
+footer img {
+  width: auto;
+  height: 35px;
+}
+
+#ft-hdr {
+  display: flex;
+  @include ft-col($max-cols);
+  justify-content: center;
+  align-items: center;
+  padding-top: 5px;
+}
+
+footer > hr {
+  @include ft-col($max-cols);
+  width: 100%;
+}
+
+.copyright {
+  grid-area: "cpyrght";
+  @include ft-col($max-cols);
+  text-align: center;
+}
+
+div[class*="ft-item"] {
+  padding-bottom: 10px;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}

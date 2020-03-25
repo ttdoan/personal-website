@@ -1,5 +1,5 @@
 import React from "react";
-import profile from "../../../assets/images/profile.jpg";
+import profile from "../../../assets/images/profile3.jpg";
 import Section from "./Section";
 
 export default class AboutSection extends React.Component {
@@ -25,6 +25,23 @@ export default class AboutSection extends React.Component {
         <div className="about-container">
           <img src={profile} alt="Profile"></img>
           <div className="about-info">
+            <h1>About Me</h1>
+            <p className="intro">
+              My name is Tony Doan, an accomplished software engineer with over
+              8 years of experience. I have worked on multiple projects,
+              undertaking challenges such as designing infrastructure for
+              scalable and effective solutions, reusing and enhancing IP
+              frameworks for project-specific requirements, and developing
+              complex scripts for automation.
+            </p>
+            <p className="intro">
+              I am a proven asset to my team, mentoring fellow coworkers on
+              technical expertise and delivering constant quality work. I have
+              worked with cross-site teams, being praised for flexibility and
+              willingness to accommodate difficult work schedule. I am always
+              looking for challenges as part of my pursuit of excitement and
+              fulfillment.
+            </p>
             {infoHash.map(obj => {
               return (
                 <>
@@ -40,10 +57,6 @@ export default class AboutSection extends React.Component {
       </>
     );
 
-    return (
-      <>
-        <Section id={this.props.id} title="About Me" content={content} />
-      </>
-    );
+    return <Section id={this.props.id} content={content} />;
   }
 }
