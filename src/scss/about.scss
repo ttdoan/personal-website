@@ -1,9 +1,8 @@
-@use "../css/style.css";
+$num-cols: 2;
 
 .about-container {
   display: grid;
   justify-items: center;
-  // align-items: start;
 }
 
 .about-container img {
@@ -14,20 +13,18 @@
 .about-info {
   display: grid;
   grid-template-columns: 10em 1fr;
-  grid-column: span 2;
-  margin-left: 10px;
-  margin-right: 10px;
+  grid-column: span $num-cols;
   align-content: center;
 }
 
 .about-info h1 {
-  grid-column: span 2;
+  grid-column: span $num-cols;
   margin-top: 0;
   margin-bottom: 30px;
 }
 
 .about-info .intro {
-  grid-column: span 2;
+  grid-column: span $num-cols;
   margin-bottom: 30px;
 }
 
@@ -36,12 +33,12 @@
 }
 
 .about-info .first-col {
-  grid-column: span 1;
+  grid-column: span ($num-cols/2);
   font-size: 20px;
 }
 
 .about-info .second-col {
-  grid-column: span 1;
+  grid-column: span ($num-cols/2);
   color: hsl(0, 0%, 50%);
 }
 
@@ -52,12 +49,11 @@
 
   .about-container img {
     display: grid;
-    grid-column: span 1;
+    grid-column: span ($num-cols/2);
   }
 
   .about-info {
     grid-column: span 1;
-    padding-left: 10px;
-    margin-right: 10px;
+    margin-left: 10px;
   }
 }

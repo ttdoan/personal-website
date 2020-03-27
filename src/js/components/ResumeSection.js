@@ -11,7 +11,7 @@ let resumeItems = [
       "Created website from scratch using the following technologies: HTML, CSS / Flexbox / Grid, JavaScript, React, and Owl Carousel",
       "Used the following tools for development/deployment: NPM, Webpack, Babel, Sass, ESlint, Prettier, Git / Github",
       <span key="resume-item-github-personal-website">
-        Link to Github respository:
+        Link to Github respository:{" "}
         <a
           href="https://github.com/ttdoan/personal-website"
           target="_blank"

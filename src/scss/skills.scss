@@ -1,0 +1,36 @@
+.skills-icon-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.skills-features-list {
+  display: grid;
+  grid-template-columns: 9em 1fr;
+}
+
+.skills-feature {
+  padding-left: 1px;
+  transition: letter-spacing 0.5s;
+}
+
+.skills-feature:hover {
+  background-color: gold;
+  letter-spacing: 1px;
+  color: black;
+}
+
+.skills-feature {
+  position: relative;
+}
+
+.skills-feature:hover::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 100%;
+  top: 0%;
+  border-top: 10px solid transparent;
+  border-left: 5px solid gold;
+  border-bottom: 10px solid transparent;
+}

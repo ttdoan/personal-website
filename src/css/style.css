@@ -5,7 +5,6 @@
   --content-width: 100%;
   --content-bg-color: rgb(60, 64, 67);
   --navlink-margin: 50px;
-  --section-margin: 10px;
 }
 
 /* Universal box sizing with inheritance. */
@@ -72,11 +71,11 @@ header {
 ul {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 .navbar-menu-list {
   display: none;
-  list-style: none;
 }
 
 .menu-list-toggle {
@@ -169,6 +168,11 @@ ul {
   height: 50px;
 }
 
+.section-container {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .section-container h1 {
   font-size: 50px;
   text-align: center;
@@ -233,8 +237,6 @@ ul {
   background-color: rgb(26, 26, 26);
   border-radius: 10px;
   padding: 15px;
-  margin-left: var(--section-margin);
-  margin-right: var(--section-margin);
 }
 
 .resume-item > .date {
@@ -253,6 +255,7 @@ ul {
 
 .resume-item > .desc {
   padding-left: 15px;
+  list-style-type: initial;
 }
 
 .contact-container {
@@ -260,7 +263,7 @@ ul {
 }
 
 .contact-container .message {
-  margin: 0 var(--section-margin) 30px var(--section-margin);
+  margin: 0 0 30px 0;
   justify-self: center;
   color: hsl(0, 0%, 50%);
 }

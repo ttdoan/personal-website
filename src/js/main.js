@@ -4,11 +4,13 @@ import Header from "./components/Header";
 import Section from "./components/Section";
 import HomeSection from "./components/HomeSection";
 import AboutSection from "./components/AboutSection";
+import SkillsSection from "./components/SkillsSection";
 import ResumeSection from "./components/ResumeSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import "../css/style.css";
 import "../scss/about.scss";
+import "../scss/skills.scss";
 import "../scss/footer.scss";
 import "owl.carousel/dist/assets/owl.carousel.min.css";
 // import "owl.carousel/dist/assets/owl.theme.default.min.css";
@@ -37,7 +39,7 @@ class Website extends React.Component {
       {
         name: "Skills",
         id: "skills",
-        section: <Section id="skills" />
+        section: <SkillsSection id="skills" />
       },
 
       {
