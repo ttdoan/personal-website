@@ -1,3 +1,5 @@
+$first-col-width: 9.5em;
+
 .skills-icon-list {
   display: flex;
   flex-flow: row wrap;
@@ -11,7 +13,7 @@
 
 .skills-features-list {
   display: grid;
-  grid-template-columns: 9.5em 1fr;
+  grid-template-columns: $first-col-width;
 }
 
 .skills-feature {
@@ -46,11 +48,11 @@
   flex-flow: row wrap;
   margin-left: 5px;
   border-left: solid white;
+  flex-basis: 100%;
 }
 
 .skills-feature-items ul li {
   width: auto;
-  border: solid red;
 }
 
 .feature-item-list {
@@ -59,12 +61,10 @@
   position: absolute;
   opacity: 1;
   transition: opacity 1s;
-  width: inherit;
 }
 
-.skills-feature-items ul li ul.feature-item-list li.feature-item {
+ul.feature-item-list li.feature-item {
   margin-left: 20px;
-  border-radius: 5px 5px;
   margin-bottom: 2px;
   line-height: 95%;
 }
@@ -80,4 +80,11 @@
 
 .selected:after {
   @extend .skills-feature:hover::after;
+}
+
+@media only screen and (min-width: 1200px) {
+  .feature-item-list {
+    // TODO: need to convert 1200px to total width
+    width: calc(1200px - #{$first-col-width});
+  }
 }

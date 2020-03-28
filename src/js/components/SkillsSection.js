@@ -76,7 +76,7 @@ export default class SkillsSection extends React.Component {
       iconFontSize: 50,
       margin: undefined,
       selected: features[0].name,
-      featureItemFontDivider: 23
+      featureItemFontDivider: 25
     };
     this.state.margin = this.computeMargin();
   }
@@ -123,34 +123,30 @@ export default class SkillsSection extends React.Component {
               </ul>
             </div>
             <div className="skills-feature-items">
-              <ul>
-                {features.map(obj => {
-                  return (
-                    <li key={"outer-list-" + obj.name}>
-                      <ul
-                        className={
-                          "feature-item-list" +
-                          (this.state.selected === obj.name ? "" : " hidden")
-                        }
-                      >
-                        {obj.list.map(item => {
-                          return (
-                            <ListItem
-                              key={obj.name + "-" + item}
-                              content={item}
-                              classes={"feature-item"}
-                              style={{
-                                fontSize:
-                                  this.computeFeatureItemFontSize() + "px"
-                              }}
-                            />
-                          );
-                        })}
-                      </ul>
-                    </li>
-                  );
-                })}
-              </ul>
+              {features.map(obj => {
+                return (
+                  <ul
+                    key={"feature-item-list-" + obj.name}
+                    className={
+                      "feature-item-list" +
+                      (this.state.selected === obj.name ? "" : " hidden")
+                    }
+                  >
+                    {obj.list.map(item => {
+                      return (
+                        <ListItem
+                          key={obj.name + "-" + item}
+                          content={item}
+                          classes={"feature-item"}
+                          style={{
+                            fontSize: this.computeFeatureItemFontSize() + "px"
+                          }}
+                        />
+                      );
+                    })}
+                  </ul>
+                );
+              })}
             </div>
           </div>
         </div>
