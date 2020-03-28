@@ -1,5 +1,6 @@
 import React from "react";
 import Section from "./Section";
+import ListItem from "./base/ListItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
@@ -10,6 +11,7 @@ class SkillIcon {
   constructor(name, color) {
     this.name = name;
     this.color = color;
+    this.itemList = null;
   }
 }
 
@@ -25,12 +27,24 @@ let icons = [
   new SkillIcon("java", "lightblue")
 ];
 
-let topics = [
+let features = [
   {
     name: "Languages",
-    list: ["HTML", "CSS", "JavaScript", "Perl", "Java", "Python", "C/C++"]
+    list: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Perl",
+      "Java",
+      "Python",
+      "C/C++",
+      "SystemVerilog"
+    ]
   },
-  { name: "Frameworks", list: ["React", "Flexbox", "Grid", "UVM", "libGDX"] },
+  {
+    name: "Frameworks",
+    list: ["React", "Flexbox", "Grid", "UVM", "libGDX"]
+  },
   {
     name: "Tools",
     list: [
@@ -51,13 +65,20 @@ export default class SkillsSection extends React.Component {
   constructor(props) {
     super(props);
 
-    this.updateMargin = this.updateMargin.bind(this);
+    this.updateSelected = this.updateSelected.bind(this);
+    this.computeMargin = this.computeMargin.bind(this);
     this.updateIcon = this.updateIcon.bind(this);
+    this.computeFeatureItemFontSize = this.computeFeatureItemFontSize.bind(
+      this
+    );
+    this.updateFeatureItemFontSize = this.updateFeatureItemFontSize.bind(this);
     this.state = {
-      fontSize: 50,
-      margin: undefined
+      iconFontSize: 50,
+      margin: undefined,
+      selected: features[0].name,
+      featureItemFontDivider: 23
     };
-    this.state.margin = this.updateMargin();
+    this.state.margin = this.computeMargin();
   }
 
   render() {
@@ -72,7 +93,7 @@ export default class SkillsSection extends React.Component {
                     key={icon}
                     icon={["fab", icon.name]}
                     style={{
-                      fontSize: this.state.fontSize + "px",
+                      fontSize: this.state.iconFontSize + "px",
                       marginLeft: this.state.margin,
                       marginRight: this.state.margin,
                       color: icon.color
@@ -82,15 +103,55 @@ export default class SkillsSection extends React.Component {
               );
             })}
           </ul>
-          <div>
+          <div className="skills-features-container">
             <div className="skills-features-list">
               <ul>
-                {topics.map(obj => {
-                  return <li className="skills-feature">{obj.name}</li>;
+                {features.map(obj => {
+                  return (
+                    <ListItem
+                      key={obj.name}
+                      classes={
+                        "skills-feature" +
+                        (this.state.selected === obj.name ? " selected" : "")
+                      }
+                      clickFunction={this.updateSelected}
+                      args={obj.name}
+                      content={obj.name}
+                    />
+                  );
                 })}
               </ul>
             </div>
-            <div></div>
+            <div className="skills-feature-items">
+              <ul>
+                {features.map(obj => {
+                  return (
+                    <li key={"outer-list-" + obj.name}>
+                      <ul
+                        className={
+                          "feature-item-list" +
+                          (this.state.selected === obj.name ? "" : " hidden")
+                        }
+                      >
+                        {obj.list.map(item => {
+                          return (
+                            <ListItem
+                              key={obj.name + "-" + item}
+                              content={item}
+                              classes={"feature-item"}
+                              style={{
+                                fontSize:
+                                  this.computeFeatureItemFontSize() + "px"
+                              }}
+                            />
+                          );
+                        })}
+                      </ul>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
           </div>
         </div>
       </>
@@ -103,8 +164,15 @@ export default class SkillsSection extends React.Component {
     );
   }
 
-  updateMargin() {
-    const iconWidth = this.state.fontSize;
+  updateSelected(name) {
+    this.setState(state => {
+      state.selected = name;
+      return state;
+    });
+  }
+
+  computeMargin() {
+    const iconWidth = this.state.iconFontSize;
     let width = parseInt(document.body.clientWidth) - 10 * 2;
     let iconsPerRow = width / (iconWidth + 10);
     if (iconsPerRow < icons.length) {
@@ -119,7 +187,7 @@ export default class SkillsSection extends React.Component {
   }
 
   updateIcon() {
-    let newMargin = this.updateMargin();
+    let newMargin = this.computeMargin();
     let list = document.getElementsByClassName("skills-icon");
     for (let i = 0; i < list.length; i++) {
       list[i].style.marginLeft = newMargin + "px";
@@ -127,8 +195,19 @@ export default class SkillsSection extends React.Component {
     }
   }
 
+  computeFeatureItemFontSize() {
+    return document.body.clientWidth / this.state.featureItemFontDivider;
+  }
+
+  updateFeatureItemFontSize() {
+    let list = document.getElementsByClassName("feature-item");
+    for (let i = 0; i < list.length; i++)
+      list[i].style.fontSize = this.computeFeatureItemFontSize() + "px";
+  }
+
   componentDidMount() {
     window.addEventListener("resize", this.updateIcon);
+    window.addEventListener("resize", this.updateFeatureItemFontSize);
   }
 
   componentWillUnmount() {

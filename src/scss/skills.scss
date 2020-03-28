@@ -2,15 +2,20 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
+  margin-bottom: 30px;
+}
+
+.skills-features-container {
+  display: flex;
 }
 
 .skills-features-list {
   display: grid;
-  grid-template-columns: 9em 1fr;
+  grid-template-columns: 9.5em 1fr;
 }
 
 .skills-feature {
-  padding-left: 1px;
+  padding-left: 2px;
   transition: letter-spacing 0.5s;
 }
 
@@ -22,6 +27,7 @@
 
 .skills-feature {
   position: relative;
+  padding-bottom: 2px;
 }
 
 .skills-feature:hover::after {
@@ -30,7 +36,48 @@
   position: absolute;
   left: 100%;
   top: 0%;
-  border-top: 10px solid transparent;
+  border-top: 11px solid transparent;
   border-left: 5px solid gold;
-  border-bottom: 10px solid transparent;
+  border-bottom: 11px solid transparent;
+}
+
+.skills-feature-items {
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: 5px;
+  border-left: solid white;
+}
+
+.skills-feature-items ul li {
+  width: auto;
+  border: solid red;
+}
+
+.feature-item-list {
+  display: flex;
+  flex-flow: row wrap;
+  position: absolute;
+  opacity: 1;
+  transition: opacity 1s;
+  width: inherit;
+}
+
+.skills-feature-items ul li ul.feature-item-list li.feature-item {
+  margin-left: 20px;
+  border-radius: 5px 5px;
+  margin-bottom: 2px;
+  line-height: 95%;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.selected {
+  background-color: gold;
+  color: black;
+}
+
+.selected:after {
+  @extend .skills-feature:hover::after;
 }
