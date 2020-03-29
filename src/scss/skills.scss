@@ -12,18 +12,18 @@ $first-col-width: 9.5rem;
 }
 
 .skills-features-list {
-  display: grid;
-  grid-template-columns: $first-col-width;
+  display: flex;
 }
 
 .skills-feature {
   padding-left: 2px;
   transition: letter-spacing 0.5s;
+  width: $first-col-width;
 }
 
 .skills-feature:hover {
   background-color: gold;
-  letter-spacing: 1px;
+  letter-spacing: 0.0625rem;
   color: black;
 }
 
