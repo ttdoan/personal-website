@@ -17,9 +17,9 @@ export default class HomeSection extends React.Component {
               <div className="owl-item">
                 <img src={Profile1} alt="Profile 1"></img>
               </div>
-              {/* <div className="owl-item">
+              <div className="owl-item">
                 <img src={Profile2} alt="Profile 2"></img>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
