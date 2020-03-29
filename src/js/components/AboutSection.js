@@ -23,7 +23,7 @@ export default class AboutSection extends React.Component {
     let content = (
       <>
         <div className="about-container">
-          <img src={profile} alt="Profile"></img>
+          <img src={profile} alt="Profile 3"></img>
           <div className="about-info">
             <h1>About Me</h1>
             <p className="intro">

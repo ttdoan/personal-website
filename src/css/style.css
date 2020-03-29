@@ -35,7 +35,7 @@ body {
 
 header {
   width: var(--content-width);
-  z-index: 1;
+  z-index: 2;
 }
 
 /* Contains the brand and navbar */
@@ -180,11 +180,10 @@ ul {
 }
 
 .owl-item {
-  border: solid white;
+  content: "";
 }
 
 .owl-dots {
-  border: solid red;
   text-align: center;
 }
 
