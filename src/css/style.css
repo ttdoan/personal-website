@@ -35,6 +35,7 @@ body {
 
 header {
   width: var(--content-width);
+  z-index: 1;
 }
 
 /* Contains the brand and navbar */

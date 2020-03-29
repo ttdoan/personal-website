@@ -1,5 +1,5 @@
 import React from "react";
-import Section from "./Section";
+import Section from "./base/Section";
 import ContactForm from "./ContactForm";
 
 export default class ContactSection extends React.Component {

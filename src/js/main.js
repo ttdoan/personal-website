@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Header from "./components/Header";
-import Section from "./components/Section";
 import HomeSection from "./components/HomeSection";
 import AboutSection from "./components/AboutSection";
 import SkillsSection from "./components/SkillsSection";

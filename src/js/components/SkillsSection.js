@@ -1,5 +1,5 @@
 import React from "react";
-import Section from "./Section";
+import Section from "./base/Section";
 import ListItem from "./base/ListItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";

@@ -1,5 +1,5 @@
 import React from "react";
-import Section from "./Section";
+import Section from "./base/Section";
 import ResumeDoc from "../../../assets/Resume.doc";
 import ResumeItem from "./ResumeItem";
 
