@@ -39,7 +39,7 @@ $num-cols: 2;
 
 .about-info .second-col {
   grid-column: span ($num-cols/2);
-  color: hsl(0, 0%, 50%);
+  color: var(--gray);
 }
 
 @media only screen and (min-width: 992px) {

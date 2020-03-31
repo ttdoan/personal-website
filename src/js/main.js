@@ -11,6 +11,7 @@ import "../css/style.css";
 import "../scss/home.scss";
 import "../scss/about.scss";
 import "../scss/skills.scss";
+import "../scss/resume.scss";
 import "../scss/footer.scss";
 
 class Website extends React.Component {
@@ -23,25 +24,25 @@ class Website extends React.Component {
       {
         name: "Home",
         id: "home",
-        section: <HomeSection id="home" />
+        section: <HomeSection key="home" id="home" />
       },
 
       {
         name: "About",
         id: "about",
-        section: <AboutSection id="about" />
+        section: <AboutSection key="about" id="about" />
       },
 
       {
         name: "Skills",
         id: "skills",
-        section: <SkillsSection id="skills" />
+        section: <SkillsSection key="skills" id="skills" />
       },
 
       {
         name: "Resume",
         id: "resume",
-        section: <ResumeSection id="resume" />
+        section: <ResumeSection key="resume" id="resume" />
       },
 
       // TODO: need to create project section..
@@ -56,7 +57,7 @@ class Website extends React.Component {
       {
         name: "Contact",
         id: "contact",
-        section: <ContactSection id="contact" />
+        section: <ContactSection key="contact" id="contact" />
       }
     ];
 
@@ -72,4 +73,4 @@ class Website extends React.Component {
   }
 }
 
-ReactDOM.render(<Website />, document.body);
+ReactDOM.render(<Website />, document.getElementById("react-container"));

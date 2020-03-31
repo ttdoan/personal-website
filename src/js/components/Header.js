@@ -1,6 +1,6 @@
 import React from "react";
 import Brand from "./Brand";
-import NavLink from "./NavLink";
+import ListItem from "./base/ListItem";
 import NavMenuButton from "./NavMenuButton";
 
 export default class Header extends React.Component {
@@ -22,12 +22,16 @@ export default class Header extends React.Component {
 
   render() {
     let navLinkList = [];
-    // TODO: need to add "key" prop for list items
     for (let i = 0; i < this.props.sections.length; i++)
       navLinkList.push(
-        <NavLink
-          linkName={this.props.sections[i].name}
-          link={this.props.sections[i].id}
+        <ListItem
+          key={"NavLink-" + this.props.sections[i].name}
+          classes="navlink"
+          content={
+            <a href={"#" + this.props.sections[i].id}>
+              {this.props.sections[i].name}
+            </a>
+          }
         />
       );
 

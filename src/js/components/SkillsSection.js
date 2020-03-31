@@ -88,7 +88,7 @@ export default class SkillsSection extends React.Component {
           <ul className="skills-icon-list">
             {icons.map(icon => {
               return (
-                <li key={icon}>
+                <li key={icon.name}>
                   <FontAwesomeIcon
                     key={icon}
                     icon={["fab", icon.name]}

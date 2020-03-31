@@ -8,8 +8,9 @@ let resumeItems = [
     date: "2020 - Present",
     position: "Personal Website - Creator",
     desc: [
-      "Created website from scratch using the following technologies: HTML, CSS / Flexbox / Grid, JavaScript, React, and Owl Carousel",
+      "Created website from scratch using the following technologies: HTML, CSS / Flexbox / Grid, JavaScript, Font Awesome, and ReactJS",
       "Used the following tools for development/deployment: NPM, Webpack, Babel, Sass, ESlint, Prettier, Git / Github",
+      "Responsive UI using mobile-first approach",
       <span key="resume-item-github-personal-website">
         Link to Github respository:{" "}
         <a
@@ -68,6 +69,7 @@ export default class ResumeSection extends React.Component {
     for (let i = 0; i < resumeItems.length; i++) {
       resumeInstances.push(
         <ResumeItem
+          key={resumeItems[i].date + resumeItems[i].position}
           instanceId={i}
           date={resumeItems[i].date}
           position={resumeItems[i].position}

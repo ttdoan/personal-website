@@ -44,12 +44,12 @@ export default class AboutSection extends React.Component {
             </p>
             {infoHash.map(obj => {
               return (
-                <>
+                <React.Fragment key={obj.key}>
                   <p className="first-col">
                     <b>{obj.key + ":"}</b>
                   </p>
                   <p className="second-col">{obj.value}</p>
-                </>
+                </React.Fragment>
               );
             })}
           </div>

@@ -69,7 +69,6 @@ $hire-font-size: 20px;
 
   .text-container {
     h1 {
-      @debug "H1: " + $h1-text-size * 1.5;
       font-size: $h1-text-size * 1.5;
     }
 

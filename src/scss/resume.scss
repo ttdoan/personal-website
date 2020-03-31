@@ -1,0 +1,75 @@
+$num-cols: 1;
+
+.resume-container {
+  display: grid;
+  width: 100%;
+  color: var(--primary-color);
+  grid-template-columns: repeat($num-cols, 1fr);
+  row-gap: 50px;
+}
+
+.resume-container a {
+  color: rgb(51, 145, 255);
+}
+
+.resume-container .download-wrapper {
+  grid-column: span $num-cols;
+  justify-self: center;
+}
+
+.resume-container .download {
+  display: inline-block;
+  background-color: var(--theme-color);
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 50px;
+  vertical-align: middle;
+  line-height: 70px;
+  width: 200px;
+}
+
+.resume-container .resume-item {
+  grid-column: span $num-cols;
+  background-color: rgb(26, 26, 26);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.resume-item > .date {
+  font-size: 25px;
+  color: var(--theme-color);
+  font-weight: bold;
+}
+
+.resume-item > .company-position {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+.resume-item > .desc {
+  padding-left: 15px;
+  list-style-type: initial;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  $num-cols: 2;
+
+  .resume-container {
+    grid-template-columns: repeat($num-cols, 1fr);
+    column-gap: 30px;
+  }
+
+  .resume-container h1 {
+    grid-column: span $num-cols;
+  }
+
+  .resume-container .download-wrapper {
+    grid-column: span $num-cols;
+  }
+}

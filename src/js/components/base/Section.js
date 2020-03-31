@@ -21,5 +21,5 @@ export default class Section extends React.Component {
 
 Section.propTypes = {
   id: PropTypes.string.isRequired,
-  content: PropTypes.isRequired
+  content: PropTypes.element.isRequired
 };

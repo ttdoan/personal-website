@@ -13,12 +13,8 @@ export default class ResumeItem extends React.Component {
           <span className="date">{this.props.date}</span>
           <p className="company-position">{this.props.position}</p>
           <ul className="desc">
-            {this.props.desc.map((desc, idx) => {
-              return (
-                <li key={"ResumeItem" + this.props.instanceId + "-" + idx}>
-                  {desc}
-                </li>
-              );
+            {this.props.desc.map(desc => {
+              return <li key={desc}>{desc}</li>;
             })}
           </ul>
         </div>
@@ -28,7 +24,6 @@ export default class ResumeItem extends React.Component {
 }
 
 ResumeItem.propTypes = {
-  instanceId: PropTypes.number.isRequired,
   date: PropTypes.string.isRequired,
   position: PropTypes.string.isRequired,
   desc: PropTypes.array.isRequired
