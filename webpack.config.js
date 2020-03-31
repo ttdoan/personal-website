@@ -72,7 +72,17 @@ module.exports = {
 
       {
         test: /\.s[ac]ss$/,
-        use: ["style-loader", "css-loader", "sass-loader"]
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              // Prefer Dart-Sass
+              implementation: require("sass")
+            }
+          }
+        ]
       }
     ]
   },

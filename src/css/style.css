@@ -2,6 +2,7 @@
 :root {
   --bg-color: black;
   --primary-color: white;
+  --theme-color: gold;
   --content-width: 100%;
   --content-bg-color: rgb(60, 64, 67);
   --navlink-margin: 50px;
@@ -28,7 +29,6 @@ body {
   width: 100%;
   max-width: var(--content-width);
   margin: auto;
-  /* font-family: Arial, Helvetica, sans-serif; */
   color: var(--primary-color);
   background-color: var(--bg-color);
 }
@@ -151,7 +151,7 @@ ul {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: gold;
+  background-color: var(--theme-color);
   width: 100%;
   visibility: visible;
   -webkit-transform: scaleX(0);
@@ -180,27 +180,8 @@ ul {
   text-align: center;
 }
 
-.owl-item {
-  content: "";
-}
-
-.owl-dots {
-  text-align: center;
-}
-
-.owl-dot span {
-  display: block;
-  /* background: none repeat scroll 0 0 #869791 ; */
-  background-color: white;
-  height: 12px;
-  width: 12px;
-  margin: 5px 7px;
-  border-radius: 20px;
-  border: solid black;
-}
-
-.active span {
-  background-color: gold;
+.highlight {
+  color: var(--theme-color);
 }
 
 .resume-container {
@@ -222,7 +203,7 @@ ul {
 
 .resume-container .download {
   display: inline-block;
-  background-color: gold;
+  background-color: var(--theme-color);
   color: black;
   font-size: 20px;
   text-decoration: none;
@@ -242,7 +223,7 @@ ul {
 
 .resume-item > .date {
   font-size: 25px;
-  color: gold;
+  color: var(--theme-color);
   font-weight: bold;
 }
 
@@ -343,6 +324,6 @@ input#contact-form-msg {
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   :root {
-    --content-width: 1200px;
+    --content-width: 75em;
   }
 }

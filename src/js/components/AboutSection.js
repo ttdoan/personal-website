@@ -1,5 +1,5 @@
 import React from "react";
-import profile from "../../../assets/images/profile3.jpg";
+import profile from "../../../assets/images/profile2.jpg";
 import Section from "./base/Section";
 
 export default class AboutSection extends React.Component {

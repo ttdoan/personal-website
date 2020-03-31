@@ -1,7 +1,6 @@
 import React from "react";
 import Section from "./base/Section";
-import Profile1 from "../../../assets/images/profile1.jpg";
-import Profile2 from "../../../assets/images/profile2.jpg";
+import profile from "../../../assets/images/profile1.png";
 
 export default class HomeSection extends React.Component {
   constructor(props) {
@@ -11,16 +10,23 @@ export default class HomeSection extends React.Component {
   render() {
     let content = (
       <>
-        <div className="home-container owl-carousel owl-theme owl-loaded">
-          <div className="owl-stage-outer">
-            <div className="owl-stage">
-              <div className="owl-item">
-                <img src={Profile1} alt="Profile 1"></img>
-              </div>
-              {/* <div className="owl-item">
-                <img src={Profile2} alt="Profile 2"></img>
-              </div> */}
-            </div>
+        <div
+          className="home-container"
+          style={{ backgroundImage: `url(${profile})` }}
+        >
+          <div className="text-container">
+            <h2>Hello! i'm</h2>
+            <h1>
+              <span className="highlight">TONY DOAN</span>
+            </h1>
+            <br></br>
+            <ul>
+              <li> Web UI/UX Design</li>
+              <li> Mobile-First Approach</li>
+              <li> Responsive UI</li>
+              <li> Mobile App Developer</li>
+            </ul>
+            <a href="#contact">Hire Me!</a>
           </div>
         </div>
       </>

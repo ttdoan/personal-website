@@ -8,13 +8,10 @@ import ResumeSection from "./components/ResumeSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import "../css/style.css";
+import "../scss/home.scss";
 import "../scss/about.scss";
 import "../scss/skills.scss";
 import "../scss/footer.scss";
-import "owl.carousel/dist/assets/owl.carousel.min.css";
-// import "owl.carousel/dist/assets/owl.theme.default.min.css";
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel";
 
 class Website extends React.Component {
   constructor(props) {

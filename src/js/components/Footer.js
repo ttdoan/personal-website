@@ -21,8 +21,9 @@ export default class Footer extends React.Component {
           </div>
           <div className="ft-item-info">
             <span>
-              I am a code developer with a wide range of experience, including
-              mobile development, web development, and RTL design validation.
+              I am a software engineer with a wide range of experience,
+              including mobile development, web development, and RTL design
+              validation.
             </span>
           </div>
           <div className="ft-item">

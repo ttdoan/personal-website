@@ -1,0 +1,88 @@
+$top: 15%;
+$h1-text-size: 40px;
+$h2-text-size: 30px;
+$hire-font-size: 20px;
+
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.text-container {
+  display: grid;
+  position: absolute;
+  top: $top;
+  width: 50%;
+  height: 65%;
+  justify-content: center;
+  align-content: start;
+  align-items: start;
+  text-align: center;
+
+  h1,
+  h2 {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+  }
+
+  h1 {
+    font-size: $h1-text-size;
+  }
+
+  h2 {
+    font-size: $h2-text-size;
+  }
+
+  ul {
+    text-align: left;
+    padding-left: 35px;
+  }
+
+  li:before {
+    content: "✓";
+  }
+
+  a {
+    background-color: var(--theme-color);
+    color: black;
+    font-size: $hire-font-size;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 50px;
+    vertical-align: middle;
+    line-height: 2;
+    width: auto;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .home-container {
+    height: 768px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .text-container {
+    h1 {
+      @debug "H1: " + $h1-text-size * 1.5;
+      font-size: $h1-text-size * 1.5;
+    }
+
+    h2 {
+      font-size: $h2-text-size * 1.5;
+    }
+
+    ul li {
+      font-size: x-large;
+    }
+
+    a {
+      font-size: $hire-font-size * 1.5;
+    }
+  }
+}
