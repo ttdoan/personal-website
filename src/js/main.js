@@ -73,11 +73,3 @@ class Website extends React.Component {
 }
 
 ReactDOM.render(<Website />, document.body);
-
-$(document).ready(function() {
-  $(".owl-carousel").owlCarousel({
-    items: 1,
-    loop: true,
-    autoplay: true
-  });
-});

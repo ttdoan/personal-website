@@ -26,6 +26,9 @@ export default class HomeSection extends React.Component {
               <li> Responsive UI</li>
               <li> Mobile App Developer</li>
             </ul>
+            <br></br>
+            <br></br>
+            <br></br>
             <a href="#contact">Hire Me!</a>
           </div>
         </div>
