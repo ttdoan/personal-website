@@ -36,7 +36,6 @@ body {
 
 header {
   width: var(--content-width);
-  z-index: 2;
 }
 
 /* Contains the brand and navbar */
@@ -49,6 +48,7 @@ header {
   position: fixed;
   top: 0;
   padding-left: 7px;
+  z-index: 1;
 }
 
 .brand {
