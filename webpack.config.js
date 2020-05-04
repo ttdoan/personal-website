@@ -48,7 +48,7 @@ module.exports = {
           // Need Babel to convert JSX to JavaScript
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env"]
+            presets: ["@babel/preset-env", "@babel/preset-react"]
           }
         },
         exclude: /node_modules/

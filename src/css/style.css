@@ -222,6 +222,14 @@ input#contact-form-msg {
   justify-self: center;
 }
 
+.contact-container .required-field {
+  grid-column: span 3;
+  color: red;
+  justify-self: center;
+  margin: 0;
+  font-size: smaller;
+}
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 }
@@ -238,14 +246,6 @@ input#contact-form-msg {
 
   .contact-container form {
     width: 70%;
-  }
-
-  .contact-container .required-field {
-    grid-column: span 3;
-    color: red;
-    justify-self: center;
-    margin: 0;
-    font-size: smaller;
   }
 }
 
