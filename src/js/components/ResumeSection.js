@@ -6,6 +6,7 @@ import ResumeItem from "./ResumeItem";
 let resumeItems = [
   {
     date: "JAN 2020 - Present",
+    company: "Ecommerce Platform",
     position: "Full Stack Developer",
     desc: [
       "Created website from scratch using the following technologies: HTML, CSS / Flexbox / Grid, JavaScript, Font Awesome, ReactJS, and Redux",
@@ -44,7 +45,8 @@ let resumeItems = [
 
   {
     date: "JUN 2012 - DEC 2019",
-    position: "Intel Corporation - Presilicon Validation Engineer",
+    company: "Intel Corporation",
+    position: "Presilicon Validation Engineer",
     desc: [
       "Designed and developed UVM tests to validate next-generation 3DXP memory controller SoC RTL design",
       "Took on multiple roles across several SoC projects, managing and completing tasks in a timely manner to deliver quality validation",
@@ -58,7 +60,8 @@ let resumeItems = [
 
   {
     date: "DEC 2014 - 2016",
-    position: "Scrots - Software Programmer",
+    company: "Scrots",
+    position: "Software Programmer",
     desc: [
       "A published mobile game developed using the game engine libGDX for cross-platform development",
       "Designed the UI, in-game currency system, integration of RPG elements (such as items and ranks) and Google Achievements/Leaderboard, and developed half of the core gamplay mechanics",
@@ -68,7 +71,8 @@ let resumeItems = [
 
   {
     date: "JUN 2013",
-    position: "Tessa - Firmware Programmer",
+    company: "Tessa",
+    position: "Firmware Programmer",
     desc: [
       "One of four-member team to develop a sleep detection prototype for motor vehicles as part of senior design project",
       "Utilizes the Microsoft Kinect to capture eye movement for signs of drowsiness, interfaces with Arduino, which is responsible for triggering stimulus that requires the driver's timely response, and activates gradual fade-in alarm to prevent startling the driver if failure to comply",
@@ -90,6 +94,7 @@ export default class ResumeSection extends React.Component {
           key={resumeItems[i].date + resumeItems[i].position}
           instanceId={i}
           date={resumeItems[i].date}
+          company={resumeItems[i].company}
           position={resumeItems[i].position}
           desc={resumeItems[i].desc}
         />
