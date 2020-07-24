@@ -5,27 +5,45 @@ import ResumeItem from "./ResumeItem";
 
 let resumeItems = [
   {
-    date: "2020 - Present",
-    position: "Personal Website - Creator",
+    date: "JAN 2020 - Present",
+    position: "Full Stack Developer",
     desc: [
-      "Created website from scratch using the following technologies: HTML, CSS / Flexbox / Grid, JavaScript, Font Awesome, and ReactJS",
-      "Used the following tools for development/deployment: NPM, Webpack, Babel, Sass, ESlint, Prettier, Git / Github",
-      "Responsive UI using mobile-first approach",
+      "Created website from scratch using the following technologies: HTML, CSS / Flexbox / Grid, JavaScript, Font Awesome, ReactJS, and Redux",
+      "Deployed ecommerce website on Heroku, backend powered by Express and MongoDB and frontend implemented using hydration of React components for SEO optimization and fast initial page loading",
+      "Utilized development tools such as Npm, webpack, Sass, Git, Babel, Font Awesome, and Postman",
+      "Designed responsive client-facing UI using mobile-first strategy with React, Redux, and React Router to match backend routing",
+      "Tested frontend for compatibility on major browsers including Chrome, Firefox, and Microsoft Edge",
+      "React component reusability using higher-order components, composition and functional hooks",
+      "Engaging consecutive animations using a combination of CSS3 animations and transitions via dynamic classes",
+      "Support for different events, including TouchEvent, MouseEvent and custom drag and drop events",
+      "Implemented backend user registration system, including security such as password hashing, dynamic salting and session persistence using auth/refresh JWT’s",
+      "Responsible for developing RESTful API’s, backend routes and controllers, and created/conducted automated API test suites using Postman",
+      "Architected DB schema for storing user info and inventory data, modeled on Express using Mongoose",
       <span key="resume-item-github-personal-website">
-        Link to Github respository:{" "}
+        Personal website:{" "}
         <a
-          href="https://github.com/ttdoan/personal-website"
+          href="https://ttdoan.github.io/personal-website/dist/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          https://github.com/ttdoan/personal-website
+          https://ttdoan.github.io/personal-website/dist/
+        </a>
+      </span>,
+      <span key={"resume-item-github-memory-game"}>
+        Web application:{" "}
+        <a
+          href="https://ttdoan.github.io/web-app-memory-game/dist/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          https://ttdoan.github.io/web-app-memory-game/dist/
         </a>
       </span>
     ]
   },
 
   {
-    date: "2012 - 2019",
+    date: "JUN 2012 - DEC 2019",
     position: "Intel Corporation - Presilicon Validation Engineer",
     desc: [
       "Designed and developed UVM tests to validate next-generation 3DXP memory controller SoC RTL design",
@@ -39,7 +57,7 @@ let resumeItems = [
   },
 
   {
-    date: "2014 - 2016",
+    date: "DEC 2014 - 2016",
     position: "Scrots - Software Programmer",
     desc: [
       "A published mobile game developed using the game engine libGDX for cross-platform development",
@@ -49,7 +67,7 @@ let resumeItems = [
   },
 
   {
-    date: "2013",
+    date: "JUN 2013",
     position: "Tessa - Firmware Programmer",
     desc: [
       "One of four-member team to develop a sleep detection prototype for motor vehicles as part of senior design project",
