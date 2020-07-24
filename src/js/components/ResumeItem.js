@@ -15,8 +15,8 @@ export default class ResumeItem extends React.Component {
             {this.props.company} - {this.props.position}
           </p>
           <ul className="desc">
-            {this.props.desc.map(desc => {
-              return <li key={desc}>{desc}</li>;
+            {this.props.desc.map((desc, idx) => {
+              return <li key={idx}>{desc}</li>;
             })}
           </ul>
         </div>
