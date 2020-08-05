@@ -50,11 +50,18 @@ let resumeItems = [
     desc: [
       "Designed and developed UVM tests to validate next-generation 3DXP memory controller SoC RTL design",
       "Took on multiple roles across several SoC projects, managing and completing tasks in a timely manner to deliver quality validation",
-      "Collaborated with multi-site teams to define RTL solutions, such as post-silicon debug, manufacturing OTP (one-time programming) features, and performance monitoring",
-      "Created Python and Perl scripts for automation, such as parsing CSV/XML files to generate testbench collaterals",
-      "Designed proof-of-concept Python integration with SystemVerilog to reduce frequency of testbench comilation cycles and increase team's work efficiency",
-      "Ownership of platform co-simulation, validating multiple RTL models in a single testbench",
-      "Mentored fellow coworkers on technical validation automation methodology, and time management skills"
+      "Integrated external scripting tools into project compilation process and enhanced them for project specific needs",
+      "Architected and wrote a complex Perl script to dynamically parse custom-formatted CSV’s and generate both RTL and UVM components, consequently assuring that both design and validation are constantly in sync",
+      "Wrote functional coverage using covergroups and bins to ensure that randomized testing has hit all combinations of valid stimulus as well as not hitting any invalid stimulus",
+      "Developed tests for multiple DFT solutions on 3DXP memory controller SoC, such as post-silicon debug, internal signals tracing, and performance monitoring",
+      "Created highly modular and configurable randomized UVM sequences to be used in independent tests or as part of other tests; sequences can be constrained to replicate specific stimulus",
+      "Debugged test results using a combination of timestamped print messages and inspecting VCS waveforms",
+      "Containerized constraints to enhance flexibility of being reused in various tests to create different flows, such as different power phases or security levels",
+      "Validation of the fuse architecture, ensuring functionality, survivability and securing access to different level of fuses depending stakeholder (ie. internal, vendors, public)",
+      "Spearheaded platform co-simulation, collaborating with cross-site teams on a daily basis to perform the following (but not limited): analyze test results, plan next steps, and divvying up tasks",
+      "Designed and demonstrated proof-of-concept Python integration with Systemverilog to reduce frequency of testbench compilation cycles and increase work efficiency for the team",
+      "Mentored fellow coworkers on technical expertise, UVM methodology, and time management skills",
+      "Bi-weekly syncs with manager/tech lead for personal and career development"
     ]
   },
 
